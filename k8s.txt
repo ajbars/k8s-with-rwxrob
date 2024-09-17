@@ -1,0 +1,64 @@
+My notes for k8s coloarning with rwxrob
+
+lesson 1
+
+main difference between VM and container is that VM doesn't share the same operation system whereas containers do share the same base operative system, same kernel
+
+Virtualization solves problems with sharing resources in different apps on the same physical server. in olden times some program can eat all resources and others wouldn't have enough
+
+Also you need to allocate at least 1 core to a vm
+
+Main virtualization engines: VMWare, leading Open Source one is VirtualBox
+You can snapshot a vm, experiment and then get back where it was
+
+Containers are ephemeral, you don't save stuff inside of em
+They are considered lightweight bc they share the os among the applications
+
+containers really are just applications on steroids
+containers are just another package mechanism - and a way to run this as if it was it's own thing
+
+in k8s u setting up criteria where you want it to run
+it's through labels and annotations you communicate that to k8s
+
+containerization is overlapping with package systems - Nyx, influences it
+big companies publish a lot of containers
+it should be complaient with OCI open container initiative
+universal package distribution method, already testing
+
+that is the center of devops movement
+the future internet will be a bunch of containers, K8s multicluster
+the modern worldwide network will be based on containers
+
+iot people use k8s to manage how they put drivers on their devices
+
+the coolest thing abt it: 
+the cluster is running, all is packaged into a pods, that are built of one or two images, those images are hosted on your own private registry. You make a change to one of your applications, you update the image and push it and it gets automatically redeployed to the entire cluster without any additional work. because of policies. you set up a policy saying: get a new image if there's a new one. always get the latest one . policy is declarative
+
+You don't want to allow developers deploy without any checks because they will use a pile of resources, so there is this thing called gateway policies that you can set
+
+This is why enerprizes are crazy abt k8s
+
+to many cto-s it's the DevOps kumbaya moment
+
+if somebody breaks you k8s will reschedule all work and auto heal
+it allows you to find any app that go rogue and break a cluster or a node
+
+the machines that hold the k8s nodes still have to be administered the old way  
+there is a separate operation system on them
+they have to have security patches and all that infra engineering techniques
+
+hose up a node
+
+the next wave cloud native will be is k8s in a graded op systems 
+bc once the os is just another containerized app - 
+
+AWS manages the k8s nodes by itself
+
+landscape.cncf.io - the technical landscape of cloud native
+talos-systems.com - os for k8s
+
+pain points in security - real thing 
+no shell or ssl access 
+
+getting access to the nodes is a pain point in k8s
+
