@@ -32,9 +32,9 @@ the modern worldwide network will be based on containers
 iot people use k8s to manage how they put drivers on their devices
 
 the coolest thing abt it: 
-the cluster is running, all is packaged into a pods, that are built of one or two images, those images are hosted on your own private registry. You make a change to one of your applications, you update the image and push it and it gets automatically redeployed to the entire cluster without any additional work. because of policies. you set up a policy saying: get a new image if there's a new one. always get the latest one . policy is declarative
+the cluster is running, all is packaged into pods, that are built of one or two images, those images are hosted on your own private registry. You make a change to one of your applications, you update the image and push it and it gets automatically redeployed to the entire cluster without any additional work. because of policies. you set up a policy saying: get a new image if there's a new one. always get the latest one. policy is declarative
 
-You don't want to allow developers deploy without any checks because they will use a pile of resources, so there is this thing called gateway policies that you can set
+You don't want to allow developers deploy without any checks because they will use a pile of resources, so there is this thing called *gateway policies* that you can set
 
 This is why enerprizes are crazy abt k8s
 
@@ -62,7 +62,7 @@ no shell or ssl access
 
 getting access to the nodes is a pain point in k8s
 
-what happens if you break out of the computer runtime you can get access to the underlying node underneath it, in Talos there is nothing you can get access to
+what happens if you break out of the kubernets runtime you can get access to the underlying node underneath it, in Talos there is nothing you can get access to
 attack can be on the socket 
 
 the filesystem on talos is read only
@@ -77,9 +77,9 @@ type 1 is bare hardware, type 2 is software
 wsl 1 is a linux kernel emulation, not even a linux kernel
 
 upsides of containers: CICD with quick and reliable rollbacks due to image immutability
-- dev and ops sepatation of concerns: create app container images at build/release time rather than deployment time, decoupling apps from infrastructure
+- dev and ops separation of concerns: create app container images at build/release time rather than deployment time, decoupling apps from infrastructure
 - observability: app health and other signals
-- environmental consistency across dev,  test and prod: runs the same on a laptop as it does in the cloud
+- environmental consistency across dev, test and prod: runs the same on a laptop as it does in the cloud
 creating development images rather than forcing some web interface
 modern development practices - create a image that all your team uses 
 - cloud and os portability - runs on different os and clouds
