@@ -22,7 +22,7 @@ it's through labels and annotations you communicate that to k8s
 
 containerization is overlapping with package systems - Nyx, influences it
 big companies publish a lot of containers
-it should be complaient with OCI open container initiative
+it should be compliant with OCI open container initiative
 universal package distribution method, already testing
 
 that is the center of devops movement
@@ -61,4 +61,47 @@ pain points in security - real thing
 no shell or ssl access 
 
 getting access to the nodes is a pain point in k8s
+
+what happens if you break out of the computer runtime you can get access to the underlying node underneath it, in Talos there is nothing you can get access to
+attack can be on the socket 
+
+the filesystem on talos is read only
+
+one of the pain points in security is the os has to be integrated with k8s
+
+crio vs dockerd - you can have both on your node
+
+hypervizor is a virtualization of physical devices
+type 1 is bare hardware, type 2 is software
+
+wsl 1 is a linux kernel emulation, not even a linux kernel
+
+upsides of containers: CICD with quick and reliable rollbacks due to image immutability
+- dev and ops sepatation of concerns: create app container images at build/release time rather than deployment time, decoupling apps from infrastructure
+- observability: app health and other signals
+- environmental consistency across dev,  test and prod: runs the same on a laptop as it does in the cloud
+creating development images rather than forcing some web interface
+modern development practices - create a image that all your team uses 
+- cloud and os portability - runs on different os and clouds
+- app-centric development - raises level of abstraction from running an os on virtual hardware to running an app on an os using virtual resources
+- loosely coupled, distributed elastic micro-services: apps are broken into smaller independent pieces and can be deployed and managed dynamically 
+- resourse isolation - predictable app performance
+- resource utilization - high efficiency and density
+
+managing policies is very important for k8s security
+OPA gatekeeper
+
+learn Go and Helm charts
+
+if you have an IT role you should ask yourself all the time - can it be hacked?
+most of the hacks are tiny superficial things
+shell check -? learn what it is
+
+canary deployment - deploy on a small scale and see. if it dies pull it back
+
+What k8s does? 
+-service discovery and load balancing - can expose a container using the DNS name or using their own IP address. if traffic to it is high, it is able to load balance and distribute the network traffic so that the deployment is stable
+
+-storage orchestration
+
 
