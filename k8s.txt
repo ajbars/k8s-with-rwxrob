@@ -102,6 +102,14 @@ canary deployment - deploy on a small scale and see. if it dies pull it back
 What k8s does? 
 -service discovery and load balancing - can expose a container using the DNS name or using their own IP address. if traffic to it is high, it is able to load balance and distribute the network traffic so that the deployment is stable
 
--storage orchestration
+-storage orchestration - allows you to automatically mount a storage system of your choice, such as local storages, public cloud providers etc
+a container does not have storage in it. it's supposed to be taken online and brought back without hurting anything
+you need to mount storage 
+what is PVC 
+local disk is not available by default to k8s
+
+if you have a job that requires 10 cpus to work you have to have at least one machine, one node that has at least 10 cpus and that job is going to have to be scheduled and compete with any other jobs that have the same requirement on that same machine
+this is why if I build a big cluster a big part of that cluster is going to be a 64 core system using like a thread ripper or some shit
+bc I want at least one powerhouse multi-core system node in my local lab cluster 
 
 
