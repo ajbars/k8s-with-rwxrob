@@ -112,4 +112,14 @@ if you have a job that requires 10 cpus to work you have to have at least one ma
 this is why if I build a big cluster a big part of that cluster is going to be a 64 core system using like a thread ripper or some shit
 bc I want at least one powerhouse multi-core system node in my local lab cluster 
 
+PVC is k8s own way of managing storage, a persistent volume, you have to map claims
+
+What are the options?
+GPFS is network attached storage that get us in trouble bc elasticsearch cannot respond to the indexes, don't work over network
+
+by default etcd doesn't store secret encrypted on disc, it stores them in base64
+
+k8s doesn't come with a source code management system of any kind. you have to have one, usually github or gitlab
+
+
 
